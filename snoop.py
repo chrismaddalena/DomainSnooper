@@ -74,14 +74,14 @@ def harvest(domain):
 	search = twittersearch.search_twitter(domain,harvestLimit)
 	search.process()
 	twitHarvest = search.get_people()
-	#print "[-] Harvesting Yahoo (4/%s)" % harvesterDomains
-	#search = yahoosearch.search_yahoo(domain,harvestLimit)
-	#search.process()
-	#yahooHarvest = search.get_emails()
-	#print "[-] Harvesting Bing (5/%s)" % harvesterDomains
-	#search = bingsearch.search_bing(domain,harvestLimit,#harvestStart)
-	#search.process('no')
-	#bingHarvest = search.get_emails()
+	print "[-] Harvesting Yahoo (4/%s)" % harvesterDomains
+	search = yahoosearch.search_yahoo(domain,harvestLimit)
+	search.process()
+	yahooHarvest = search.get_emails()
+	print "[-] Harvesting Bing (5/%s)" % harvesterDomains
+	search = bingsearch.search_bing(domain,harvestLimit,#harvestStart)
+	search.process('no')
+	bingHarvest = search.get_emails()
 	print "[-] Harvesting Jigsaw (6/%s)" % harvesterDomains
 	search = jigsaw.search_jigsaw(domain,harvestLimit)
 	search.process()
